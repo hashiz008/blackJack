@@ -6,7 +6,7 @@
       check out the
       <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
     </p>
-    <h3>Installed CLI Plugins</h3>
+    <h3>Installed CLI</h3>
     <ul>
       <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
       <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-router" target="_blank" rel="noopener">router</a></li>
@@ -31,16 +31,32 @@
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
     </ul>
   </div>
+  <h1>axxx</h1>
+  <form>
+    <input type="text" v-model="data.userName" />
+    <button v-on:click.prevent="hello">挨拶</button>
+  </form>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-
+import { defineComponent,reactive } from 'vue';
+import axios from "axios";
 export default defineComponent({
   name: 'HelloWorld',
   props: {
     msg: String,
   },
+  setup() {
+    const data = reactive({userName: ""})
+    const hello = async () => {
+      const res = await axios.post("http://localhost:3000/api/hello", {userName: data.userName})
+      alert(res.data)
+    }
+    return {
+      data,
+      hello,
+    }
+  }
 });
 </script>
 
