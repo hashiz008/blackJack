@@ -14,25 +14,24 @@
         <div>
             <button @click="startBtn">Game Start</button>
         </div>
-      </div>
-      <BlackJack v-if="!topPage" :name="inputName"  title="blackJack" />
-</template>zx
+    </div>
+        <BlackJack v-if="!topPage" :name="inputName" /> 
+</template>
 
 <script lang="ts">
-import { defineComponent, reactive, ref } from "vue";
+import { defineComponent, ref } from "vue";
 import BlackJack from "../components/BlackJack.vue";
-// import axios from "axios";
 import { useRouter } from "vue-router";
 export default defineComponent({
     name: "TopPage",
-    components: { BlackJack },
+    // components: { BlackJack },
     setup() {
         const inputName = ref("");
         const selectGame = ref("");
         const router = useRouter();
         const topPage = ref(true);
         const startBtn = () => {
-            router.push("/blackJack");
+            router.push("/bettingChips");
             topPage.value = false;
         };
         return {
@@ -40,8 +39,8 @@ export default defineComponent({
             selectGame,
             topPage,
             startBtn,
-        }
-    }
+        };
+    },
 });
 </script>
 

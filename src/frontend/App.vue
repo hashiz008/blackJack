@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import TopPage from "../frontend/views/TopPageView.vue";
-// import BlackJack from "../frontend/views/BlackJackView.vue";
 </script>
 <template>
     <nav>
@@ -11,8 +10,6 @@ import TopPage from "../frontend/views/TopPageView.vue";
     <div>
         <TopPage></TopPage>
     </div>
-    <div></div>
-    <div></div>
 </template>
 
 <style></style>

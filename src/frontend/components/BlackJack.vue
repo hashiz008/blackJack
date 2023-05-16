@@ -1,17 +1,22 @@
 <template>
     <div>
-        <h1>{{ title }}</h1>
+      <button>SURRENDER</button>
     </div>
     <div>
-        <p>{{ name }}</p>
+      <button>STAND</button>
+    </div>
+    <div>
+      <button>HIT</button>
+    </div>
+    <div>
+      <button>DOUBLE</button>
     </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, ref, type Ref } from "vue";
+import { defineComponent,ref } from "vue";
 export default defineComponent({
     name: "BlackJack",
-    props: ['name','title'],
     setup() {
         return {};
     },

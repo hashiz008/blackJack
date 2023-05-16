@@ -1,6 +1,5 @@
 <template>
   <div class="home"> 
-    <!-- <TopPage msg="Welcome to Your Vue.js + TypeScript App"/> -->
     <TopPage/>
   </div> 
 </template>
@@ -13,6 +12,6 @@ export default defineComponent({
   name: 'TopPageView',
   components: {
     TopPage,
-  },
+  }
 });
 </script>
